@@ -6,8 +6,10 @@
 class Motor{
 public:
 	Motor(int step, int dir);
-	void left();
-	void right();
+	void cw();
+	void ccw();
+	int dirPin;
+	int stepPin;
 private:
 
 	
