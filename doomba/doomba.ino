@@ -18,3 +18,28 @@ void forward()
 	rw.cw();
 	Sensor.getDistance(d);
 }
+
+void backwards()
+{
+	lw.ccw();
+	rw.ccw();
+	Sensor.getDistance(d);
+}
+
+void right()
+{
+	for(int i=0; i<6; i++)
+	{
+		lw.cw();
+		rw.ccw();
+	}
+}
+
+void left()
+{
+	for(int i=0; i<6; i++)
+	{
+		lw.ccw();
+		rw.cw();
+	}
+}
