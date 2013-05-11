@@ -1,9 +1,9 @@
 #include "Sensor.h"
 #include "Motor.h"
-Motor rw();
-Motor lw();
+Motor rw(11,12);
+Motor lw(10,9);
 int d = 90;
-
+Sensor sensor;
 void setup()
 {
 }
@@ -16,9 +16,8 @@ void forward()
 {
 	lw.cw();
 	rw.cw();
-	Sensor.getDistance(d);
+	sensor.getDistance(d);
 }
-
 void backwards()
 {
 	lw.ccw();
