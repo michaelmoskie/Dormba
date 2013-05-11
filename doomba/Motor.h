@@ -8,10 +8,10 @@ public:
 	Motor(int step, int dir);
 	void cw();
 	void ccw();
+	
+private:
 	int dirPin;
 	int stepPin;
-private:
-
 	
 };
 
