@@ -18,6 +18,7 @@ void forward()
 	rw.cw();
 	sensor.getDistance(d);
 }
+
 void backwards()
 {
 	lw.ccw();
