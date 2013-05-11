@@ -22,7 +22,7 @@ void backwards()
 {
 	lw.ccw();
 	rw.ccw();
-	Sensor.getDistance(d);
+	sensor.getDistance(d);
 }
 
 void right()
