@@ -1,12 +1,15 @@
 #include "Sensor.h"
-#include "Servo.h"
-Servo sensorServo;
 Sensor::Sensor()
 {
 	Serial.begin(9600);
 }
-int Sensor::getDistance(int degree)
+int Sensor::getDistance()
 {
-	sensorServo.attach(3);
+	if(Serial.available()>0)
+	{
+		int incomingByte = 0;
+		incomingByte = Serial.read();
+		return int(incomingByte);
+	}
 	//Return distance, converted to centimeters to caller
 }
