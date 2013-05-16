@@ -8,6 +8,7 @@ Servo senSrv;
 Sensor sensor(13);
 void setup()
 {
+	pinMode(A0,INPUT);
 	senSrv.attach(3);
 }
 
