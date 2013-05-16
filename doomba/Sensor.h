@@ -3,11 +3,13 @@
 
 
 #include "Arduino.h"
-
+#include <Servo.h>
 class Sensor{
 public:
-	Sensor();
+	Sensor(int servoPin);
     int getDistance();
+private:
+	Servo sensorServo;
 };
 
 #endif

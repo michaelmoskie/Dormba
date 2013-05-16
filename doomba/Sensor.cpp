@@ -1,6 +1,7 @@
 #include "Sensor.h"
-Sensor::Sensor()
+Sensor::Sensor(int servoPin)
 {
+	sensorServo.attach(servoPin);
 	Serial.begin(9600);
 }
 int Sensor::getDistance()

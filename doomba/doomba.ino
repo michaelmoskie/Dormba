@@ -5,7 +5,7 @@ Motor rw(10);
 Motor lw(11);
 int d = 90;
 Servo senSrv;
-Sensor sensor;
+Sensor sensor(13);
 void setup()
 {
 	senSrv.attach(3);
@@ -42,5 +42,5 @@ void left()
 	lw.cw();
 	delay(500);
 	rw.stop();
-	lw.stop();
+	lw.stop(); 
 }
