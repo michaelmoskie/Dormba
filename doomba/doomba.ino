@@ -1,8 +1,8 @@
 #include "Sensor.h"
 #include "Motor.h"
 #include <Servo.h>
-Motor rw(11,12);
-Motor lw(10,9);
+Motor rw(10);
+Motor lw(11);
 int d = 90;
 Servo senSrv;
 Sensor sensor;
@@ -19,35 +19,28 @@ void forward()
 {
 	lw.cw();
 	rw.cw();
-	sensor.getDistance(d);
 }
 
 void backwards()
 {
 	lw.ccw();
 	rw.ccw();
-	sensor.getDistance(d);
 }
 
 void right()
 {
-	for(int i=0; i<6; i++)
-	{
-		lw.cw();
-		rw.ccw();
-	}
+	rw.ccw();
+	lw.ccw();
+	delay(500);
+	rw.stop();
+	lw.stop();
 }
 
 void left()
 {
-	for(int i=0; i<6; i++)
-	{
-		lw.ccw();
-		rw.cw();
-	}
-}
-
-void servoPos(int pos)
-{
-	senSrv.write(pos);
+	rw.cw();
+	lw.cw();
+	delay(500);
+	rw.stop();
+	lw.stop();
 }

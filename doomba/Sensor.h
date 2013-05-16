@@ -7,7 +7,7 @@
 class Sensor{
 public:
 	Sensor();
-    int getDistance(int degree);
+    int getDistance();
 };
 
 #endif

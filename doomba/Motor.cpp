@@ -1,26 +1,20 @@
 #include "Motor.h"
-Motor::Motor(int step, int dir)
+Motor::Motor(int srvPin)
 {
-	pinMode(step,OUTPUT);
-	pinMode(dir,OUTPUT);
-	digitalWrite(step,LOW);
-	digitalWrite(dir,LOW);
-	dirPin = dir;
-	stepPin = step;
+	srv.attach(srvPin);
 }
 
 void Motor::cw()
 {
-	digitalWrite(dirPin,LOW);
-	digitalWrite(stepPin,LOW);
-	delay(100);//The delay needs to be toyed with to get speed right.
-	digitalWrite(stepPin,HIGH);
+	srv.write(180);
 }
 
 void Motor::ccw()
 {
-	digitalWrite(dirPin,HIGH);
-	digitalWrite(stepPin,LOW);
-	delay(100);//The delay needs to be toyed with to get speed right.
-	digitalWrite(stepPin,HIGH);
+	srv.write(0);
+}
+
+void Motor::stop()
+{
+	srv.write(90);
 }

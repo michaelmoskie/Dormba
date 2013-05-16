@@ -2,16 +2,16 @@
 #define MOTOR_H
 
 #include "Arduino.h"
-
+#include <Servo.h>
 class Motor{
 public:
-	Motor(int step, int dir);
+	Motor(int srvPin);
 	void cw();
 	void ccw();
+	void stop();
 	
 private:
-	int dirPin;
-	int stepPin;
+	Servo srv;
 	
 };
 
