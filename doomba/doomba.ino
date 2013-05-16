@@ -14,6 +14,16 @@ void setup()
 
 void loop()
 {
+	int x = analogRead(A0);
+	if (x<20)
+	{
+		right();
+	}
+	else if (x>20) 
+	{
+		forward();
+	}
+
 }
 
 void forward()
